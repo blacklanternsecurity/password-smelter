@@ -1,0 +1,38 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+beautifulsoup4 = ">=4.12"
+blinker = ">=1.9"
+certifi = ">=2024"
+charset-normalizer = ">=3.0"
+click = ">=8.0"
+dash = ">=2.0"
+dash-bootstrap-components = ">=1.0"
+flask = ">=3.0"
+idna = ">=3.0"
+itsdangerous = ">=2.0"
+jinja2 = ">=3.0"
+kaleido = ">=1.0"
+markupsafe = ">=3.0"
+nest-asyncio = ">=1.6"
+numpy = ">=2.0"
+packaging = ">=24.0"
+pandas = ">=2.0"
+password-stretcher = ">=1.0.4"
+plotly = ">=5.0"
+psutil = ">=6.0"
+python-dateutil = ">=2.9"
+retrying = ">=1.3"
+six = ">=1.16"
+tabulate = ">=0.9"
+typing-extensions = ">=4.0"
+werkzeug = ">=3.0"
+xlsxwriter = ">=3.0"
+
+[dev-packages]
+
+[requires]
+python_version = "3.14"
