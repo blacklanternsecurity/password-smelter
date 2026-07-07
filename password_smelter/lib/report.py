@@ -127,17 +127,14 @@ class PasswordReport:
         for k,stat in self.stats:
             stat.df.to_excel(writer, sheet_name=str(stat.title), index=False)
 
-        # Close the Pandas Excel writer and output the Excel file.
-        writer.save()
+        writer.close()
 
 
     def make_html_report(self, show=True):
 
         print('[+] Generating report')
 
-        import dash
-        import dash_core_components as dcc
-        import dash_html_components as html
+        from dash import Dash, dcc, html
 
         if self.stats.cracked <= 0:
             assert False, 'No passwords to analyze'
@@ -238,7 +235,7 @@ class PasswordReport:
             graph.figure.layout.yaxis.gridcolor = self.grid_color
 
         if show:
-            app = dash.Dash(__name__, external_stylesheets=[self.dash_theme])
+            app = Dash(__name__, external_stylesheets=[self.dash_theme])
             app.layout = html.Div(
                 style={
                     'padding': '1.5em',

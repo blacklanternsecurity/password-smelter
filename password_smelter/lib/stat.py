@@ -211,8 +211,7 @@ class Stat:
                 if self.include_other:
                     other = df[df[0]=='Other']
                     if other.empty:
-                        df = df.append(pd.DataFrame([('Other', rare[1].sum())]), ignore_index=True)
-                    # if so, add to it instead
+                        df = pd.concat([df, pd.DataFrame([('Other', rare[1].sum())])], ignore_index=True)
                     else:
                         df.loc[df[0]=='Other',1] += rare[1].sum()
 
@@ -481,8 +480,6 @@ class PasswordMetaStat(Stat):
 class AdvancedMaskStat(Stat):
 
     def make_figure(self, theme):
-
-        import plotly.figure_factory as ff
 
         fig = make_subplots(
             rows=1, cols=2,
